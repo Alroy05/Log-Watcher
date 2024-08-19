@@ -5,13 +5,11 @@
    <script>
       var socket = io("ws://localhost:3000");
 
-      //When the update log event is returned by the socket 
       socket.on('update-log', function(data){
          console.log(data);
          for(elem of data) document.getElementById('message-container').innerHTML +='<p>' + elem + '</br><p>';
          });
 
-      //When the init log event is returned by the socket 
       socket.on('init',function(data){
         console.log(data);
         for(elem of data) document.getElementById('message-container').innerHTML +='<p>' + elem + '</br><p>';      
